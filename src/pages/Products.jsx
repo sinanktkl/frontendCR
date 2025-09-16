@@ -587,8 +587,8 @@ const fetchCartItems = async () => {
               <>
                 <div className="row g-3 mb-4">
                   {allProducts?.length > 0 ? (
-                    allProducts.map((product, index) => (
-                      <div key={index} className="col-12 col-sm-4 col-md-4 col-xl-3">
+                    allProducts?.map((product, index) => (
+                      <div key={product._id} className="col-12 col-sm-4 col-md-4 col-xl-3">
                         <div className="product-card card h-100 shadow-sm">
                           {/* Product Image */}
                           <div className="card-img-container">
