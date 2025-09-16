@@ -231,7 +231,7 @@ function AddProducts() {
 
   console.log(AddProducts);
   useEffect(() => {
-    if (AddProducts.productImage.type == 'image/png' || AddProducts.productImage.type == 'image/jpg' || AddProducts.productImage.type == 'image/jpeg') {
+    if (AddProducts.productImage.type == 'image/png' || AddProducts.productImage.type == 'image/jpg' || AddProducts.productImage.type == 'image/jpeg' || AddProducts.productImage.type == 'image/webp') {
       setPreview(URL.createObjectURL(AddProducts.productImage));
       console.log("generete url");
 
