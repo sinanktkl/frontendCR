@@ -5,29 +5,29 @@ function Instagraming() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchInstagramPosts = async () => {
-      try {
-        const token = "YOUR_LONG_LIVED_ACCESS_TOKEN"; // ⚡ replace with your token
-        const url = `https://graph.instagram.com/me/media?fields=id,media_url,permalink,caption&access_token=${token}`;
+  // useEffect(() => {
+  //   const fetchInstagramPosts = async () => {
+  //     try {
+  //       const token = sessionStorage.getItem("token"); // ⚡ replace with your token
+  //       const url = `https://graph.instagram.com/me/media?fields=id,media_url,permalink,caption&access_token=${token}`;
 
-        const response = await fetch(url);
-        const data = await response.json();
+  //       const response = await fetch(url);
+  //       const data = await response.json();
 
-        if (data && data.data) {
-          setPosts(data.data);
-        } else {
-          console.error("No posts found", data);
-        }
-      } catch (error) {
-        console.error("Error fetching Instagram posts:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  //       if (data && data.data) {
+  //         setPosts(data.data);
+  //       } else {
+  //         console.error("No posts found", data);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching Instagram posts:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchInstagramPosts();
-  }, []);
+  //   fetchInstagramPosts();
+  // }, []);
 
   return (
     <section className="instagram-feed-section">
@@ -58,15 +58,15 @@ function Instagraming() {
           ) : (
             <div className="instagram-feed-track">
               <p className="loading-text">Instagram feed is loading...</p>
-              {posts.map((post) => (
+              {posts?.map((post) => (
                 <a
-                  key={post.id}
-                  href={post.permalink}
+                  key={post?.id}
+                  href={post?.permalink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="insta-post"
                 >
-                  <img src={post.media_url} alt={post.caption || "Instagram post"} />
+                  <img src={post?.media_url} alt={post?.caption || "Instagram post"} />
                 </a>
               ))}
             </div>

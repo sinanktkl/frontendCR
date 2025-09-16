@@ -629,7 +629,7 @@ const fetchCartItems = async () => {
                             <div className='text-center'>
                               <button className="btn btn-info btn-sm me-2" onClick={() => handleBuyNow(product._id)}>Buy Now</button>
                               {/* <button className="btn btn-outline-dark btn-sm" onClick={()=>handleAddToWishlist(product._id)}> <i className="fa-solid fa-heart text-danger"></i></button> */}
-                              {cartItems.some(w => w.productId._id === product._id) ? (
+                              {cartItems.some(w => w?.productId?._id === product._id) ? (
                                 <button
                                   className="btn btn-danger btn-sm me-2"
                                   onClick={() => handleAddToCart(product._id)} // ✅ toggle remove
@@ -645,7 +645,7 @@ const fetchCartItems = async () => {
                                   <i className="fa-solid fa-cart-plus"></i>         
                                 </button>
                               )}
-                              {wishlist.some(w => w.productId._id === product._id) ? (
+                              {wishlist.some(w => w?.productId?._id === product._id) ? (
                                 <button
                                   className="btn btn-danger btn-sm"
                                   onClick={() => handleRemoveFromWishlist(product._id)} // ✅ toggle remove
