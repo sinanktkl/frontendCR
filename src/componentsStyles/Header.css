@@ -1,0 +1,122 @@
+/* header.css */
+
+/* top header */
+
+.topbar {
+  background: linear-gradient(to top,#004080, #081e35); /* blue glossy look */
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: auto; /* pushes right on desktop */
+}
+
+.topbar-nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.topbar-nav a {
+  color: #e2e9eb; /* bootstrap text-info color */
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block; /* required so transform works properly */
+}
+
+.topbar-nav a:hover {
+  color: #cd1717; /* slightly darker shade on hover */
+  transform: scale(1.1); /* zoom effect */
+}
+.topbar-nav span {
+  color: white;
+  opacity: 0.8;
+}
+
+/* Responsive: center on mobile */
+@media (max-width: 768px) {
+  .topbar {
+    justify-content: center;
+  }
+  .topbar-nav {
+    margin-left: 0; /* remove right alignment */
+  }
+}
+
+/* header sectionn */
+
+.header-title {
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+  height: 40px;
+  color: #e6f1f4; /* Bootstrap text-info */
+  letter-spacing: 3px;
+  margin-left: 10px;
+  animation: blueGlowScale 3s infinite alternate;
+}
+
+@keyframes blueGlowScale {
+  0% {
+    transform: scale(1.1);
+    text-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 20px #4682b4;
+  }
+  100% {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px #00bfff, 0 0 30px #1e90ff, 0 0 45px #87ceeb;
+  }
+}
+
+
+/* Style for Navbar links */
+/* Apply styles to all nav-links except wishlist & cart & profile */
+.navbar-nav .nav-link:not(.wishlist):not(.cart):not(.profile) {
+  position: relative;
+  color: white !important;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.navbar-nav .nav-link:not(.wishlist):not(.cart):not(.profile)::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #dde0e3;
+  transition: width 0.5s ease;
+}
+
+.navbar-nav .nav-link:not(.wishlist):not(.cart):not(.profile):hover::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-link:not(.wishlist):not(.cart):not(.profile):hover {
+  transform: translateY(-10px);
+}
+
+.navbar-nav .nav-link.wishlist,
+.navbar-nav .nav-link.cart,
+.navbar-nav .nav-link.profile{
+  color: #e2e9eb !important;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+
+.navbar-nav .nav-link.wishlist:hover,
+.navbar-nav .nav-link.cart:hover,
+.navbar-nav .nav-link.profile:hover
+ {
+  transform: scale(1.2);
+}

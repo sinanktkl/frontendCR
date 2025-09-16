@@ -1,0 +1,36 @@
+/* Make action buttons neatly aligned */
+
+/* Improve button appearance */
+.action-buttons .btn {
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+/* Hover effects */
+.action-buttons .btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile responsive - stack buttons vertically */
+@media (max-width: 576px) {
+  
+}
+
+
+/* Make text responsive and wrap properly */
+.responsive-text {
+  word-wrap: break-word;
+  white-space: normal;
+  max-width: 450px;
+}
+
+/* On smaller screens, allow text to shrink */
+@media (max-width: 768px) {
+  .responsive-text {
+    max-width: 250px;
+    font-size: 0.9rem;
+  }
+}

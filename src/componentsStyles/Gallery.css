@@ -1,0 +1,48 @@
+.about-gallery-card {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.about-gallery-img {
+  transition: transform 0.5s ease;
+}
+
+.about-gallery-card:hover .about-gallery-img {
+  transform: scale(1.05);
+}
+
+.about-gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.about-gallery-card:hover .about-gallery-overlay {
+  transform: translateY(0);
+}
+
+.about-gallery-overlay p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Mobile / Touch devices: show overlay on tap */
+@media (hover: none) and (pointer: coarse) {
+  .about-gallery-card:active .about-gallery-overlay {
+    transform: translateY(0);
+  }
+}

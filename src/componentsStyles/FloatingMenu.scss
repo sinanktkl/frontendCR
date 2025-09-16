@@ -1,0 +1,79 @@
+.floatingmenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    bottom: 0;
+    margin: auto;
+
+    a {
+        background: #fff;
+        display: inline-block;
+        padding: 13px 10px 13px 50px;
+        position: relative;
+        z-index: 99999;
+        color: #183883;
+        transition: all 0.3s ease;
+        left: 0;
+        width: 170px;
+        box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.14);
+        height: 50px;
+        text-decoration: none;
+
+        img {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        &:hover {
+            left: -115px;
+
+        }
+    }
+}
+
+@media all and (max-width: 767px) {
+    .floatingmenu {
+        top: unset;
+        transition: unset;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        display: flex;
+        z-index: 1;
+        justify-content: flex-start;
+
+        a {
+            display: flex;
+            flex-flow: column-reverse;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            flex-basis: 0;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 6px 10px;
+            height: auto;
+
+            img {
+                position: unset;
+                top: unset;
+            }
+
+            &:hover {
+                left: 0;
+            }
+        }
+    }
+
+    .footer-with-floatingmenu.tvs-corporate-footer {
+        padding: 40px 0 80px !important;
+    }
+}

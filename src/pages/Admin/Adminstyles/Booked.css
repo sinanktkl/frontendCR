@@ -1,0 +1,7 @@
+.break-commas {
+  white-space: pre-line;
+}
+.pagination .page-item.active .page-link {
+  color: white;
+  font-weight: 600;
+}

@@ -1,0 +1,151 @@
+// .products-page {
+//   padding: 20px;
+
+//   .category-list li {
+//     padding: 8px 0;
+//     border-bottom: 1px solid #ddd;
+//     cursor: pointer;
+//     &:hover {
+//       color: #d9534f;
+//     }
+//   }
+
+//   .product-card {
+//     background: white;
+//     border: 1px solid #eee;
+//     border-radius: 5px;
+//     overflow: hidden;
+//     transition: transform 0.2s ease-in-out;
+
+//     &:hover {
+//       transform: translateY(-5px);
+//     }
+
+//     img {
+//       width: 100%;
+//       height: 300px;
+//     }
+
+//     .product-info {
+//       padding: 10px;
+//       text-align: center;
+//       h6 {
+//         font-size: 14px;
+//         font-weight: bold;
+//       }
+//       p {
+//         margin: 0;
+//         font-size: 13px;
+//         color: #666;
+//       }
+//     }
+//   }
+// }
+
+
+.category-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+
+  &:hover {
+    color: #d9534f;
+  }
+}
+
+
+
+.sidebar {
+  @media (min-width: 768px) {
+    position: sticky;
+    top: 80px; // adjust based on your navbar height
+    align-self: flex-start;
+  }
+}
+
+.category-list {
+  li {
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    color: grey;
+
+    &:hover {
+      color: #033c73; // 
+      scale: 1.05;
+    }
+
+    &.active-category {
+      color: #ffffff; //
+      font-weight: bold;
+      border-left: 4px solid #000000; // Optional highlight
+      background-color: #033c73; // Optional subtle background
+    }
+  }
+}
+
+
+button:disabled {
+  cursor: not-allowed !important;
+  pointer-events: all !important;
+  /* Enable hover so cursor works */
+  opacity: 0.6;
+  /* Optional: visually indicate it's disabled */
+}
+
+button:disabled:hover {
+  cursor: not-allowed !important;
+}
+
+
+.card-title {
+  line-height: 2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; // Number of lines
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    border-radius: 8px;
+  }
+
+  .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  h6 {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    min-height: 380px;
+  }
+
+  .d-flex.flex-wrap.gap-2 {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
